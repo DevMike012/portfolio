@@ -252,12 +252,13 @@ body {
 }
 
 .header-image {
-    float: right; 
-    height: auto; 
-    background-size: cover; 
-    background-position: center; 
-    width: 40%; height: 100vh; 
-    position: relative; 
+    float: right;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    height: 100vh;
+    position: relative;
     left: -100px;
 }
 
@@ -793,7 +794,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all .4s ease;
-    width: 60%;
+    width: 50%;
     border-radius: 10px;
     background: #c70039;
 }
@@ -807,7 +808,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all .4s ease;
-    width: 38%;
+    width: 23%;
     border-radius: 10px;
     background: #c70039;
 }
@@ -821,7 +822,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all .4s ease;
-    width: 54%;
+    width: 34%;
     border-radius: 10px;
     background: #c70039;
 }
@@ -835,7 +836,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all .4s ease;
-    width: 57%;
+    width: 37%;
     border-radius: 10px;
     background: #c70039;
 }
@@ -972,6 +973,29 @@ button:hover .index {
 
 .button {
     text-align: center;
+}
+
+.iframe-container {
+    display: none;
+    /* Hide the container by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent background */
+    z-index: 9999;
+    /* Ensure it appears above other content */
+}
+
+.iframe-container iframe {
+    width: 80%;
+    height: 80%;
+    margin: 5% auto;
+    display: block;
+    border: none;
+    border-radius: 10px;
 }
 
 .portfolio-image img {
@@ -1537,16 +1561,24 @@ For devices with smaller width like mobile phone
     }
 
     .header-image {
-        float: none; /* Remove float */ 
-        width: 100%; /* Full width */ 
-        left: 0; /* Center align */
-        right: 20; 
-        margin: auto; /* Center align */ 
-        height: 50vh; /* Adjust height as needed */
+        float: none;
+        /* Remove float */
+        width: 100%;
+        /* Full width */
+        left: 0;
+        /* Center align */
+        right: 20;
+        margin: auto;
+        /* Center align */
+        height: 50vh;
+        /* Adjust height as needed */
     }
-    .header-image img {  
-        height: 100vh; /* Adjust height as needed */ 
-        width: 100%; /* Ensure image fills the container */ 
+
+    .header-image img {
+        height: 100vh;
+        /* Adjust height as needed */
+        width: 100%;
+        /* Ensure image fills the container */
     }
 
     .social-media-links {
@@ -1796,6 +1828,20 @@ For devices with smaller width like mobile phone
     .portfolio-image {
         height: 300px;
         width: 90%;
+    }
+
+    .iframe-container iframe {
+        width: 90%;
+        height: 70%;
+        margin: 15% auto;
+    }
+
+    .iframe-container #closeButton {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
     }
 
     #navigation-bar img {
@@ -2075,22 +2121,31 @@ for tabs and large phones
         font-size: 40px;
     }
 
-    .header-image { 
-        float: none; /* Remove float */ 
-        width: 100%; /* Full width */ 
-        left: 0; /* Center align */ 
-        margin: auto; /* Center align */
-        height: 100vh; /* Adjust height as needed */ 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        background-size: cover; 
-        background-position: center; 
-    } 
-    .header-image img { 
-        height: 100vh; /* Adjust height as needed */ 
-        width: auto; /* Ensure image maintains aspect ratio */ 
-        max-width: 100%; /* Ensure image doesn't exceed container width */ 
+    .header-image {
+        float: none;
+        /* Remove float */
+        width: 100%;
+        /* Full width */
+        left: 0;
+        /* Center align */
+        margin: auto;
+        /* Center align */
+        height: 100vh;
+        /* Adjust height as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header-image img {
+        height: 100vh;
+        /* Adjust height as needed */
+        width: auto;
+        /* Ensure image maintains aspect ratio */
+        max-width: 100%;
+        /* Ensure image doesn't exceed container width */
     }
 
     .social-media-links {
@@ -2905,13 +2960,13 @@ for tabs and large phones
         background: #050505;
         border: none;
         color: whitesmoke;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
     }
 
     form button {
         padding: 8px 24px;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
         color: whitesmoke;
         opacity: .8;
