@@ -194,43 +194,21 @@ document.getElementById('showFlipbookButton').addEventListener('click', function
   event.preventDefault(); 
 
   
-document.getElementById('showFlipbookButton').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default action of the link //
-
-    // Check screen width //
-    if (window.innerWidth <= 768) {
-        
-        console.log('Opening in new tab on smaller screen.');
-        
-        // Open in a new tab for smaller screens //
-        window.open('index.html', '_blank');
-    } else {
-         
-        console.log('Displaying in iframe on larger screen.');
-        
-        // Show iframe for larger screens //
-        var flipbookContainer = document.getElementById('flipbookContainer');
-        flipbookContainer.style.display = 'block';
-
-        
-        if (!document.getElementById('closeButton')) {
-            var closeButton = document.createElement('button');
-            closeButton.id = 'closeButton';
-            closeButton.textContent = 'Close';
-            closeButton.style.position = 'absolute';
-            closeButton.style.bottom = '10px';
-            closeButton.style.left = '50%';
-            closeButton.style.transform = 'translateX(-50%)';
-            closeButton.style.backgroundColor = '#fff';
-            closeButton.style.border = 'none';
-            closeButton.style.padding = '10px';
-            closeButton.style.cursor = 'pointer';
-            closeButton.style.borderRadius = '5px';
-            flipbookContainer.appendChild(closeButton);
-            
-            closeButton.addEventListener('click', function() {
-                flipbookContainer.style.display = 'none';
-            });
+document.getElementById('showIframeButton').addEventListener('click', function (event) {
+  event.preventDefault(); var iframeContainer = document.getElementById('iframeContainer'); iframeContainer.style.display = 'block'
+  if (!document.getElementById('closeButton')) {
+    var closeButton = document.createElement('button');
+    closeButton.id = 'closeButton'; closeButton.textContent = 'Close';
+    closeButton.style.position = 'absolute'; closeButton.style.bottom = '10px';
+    closeButton.style.left = '50%'; closeButton.style.transform = 'translateX(-50%)';
+    closeButton.style.backgroundColor = '#fff'; closeButton.style.border = 'none';
+    closeButton.style.padding = '10px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.borderRadius = '5px';
+    iframeContainer.appendChild(closeButton);
+    closeButton.addEventListener('click', function () { iframeContainer.style.display = 'none'; });
+  }
+});
         }
     }
 });
