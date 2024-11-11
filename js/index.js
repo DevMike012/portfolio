@@ -190,18 +190,37 @@ $(function () {
   $('.navigation-close').hover(cursorhover, cursor);
 
 })
-document.getElementById('showIframeButton').addEventListener('click', function (event) {
-  event.preventDefault(); var iframeContainer = document.getElementById('iframeContainer'); iframeContainer.style.display = 'block'
-  if (!document.getElementById('closeButton')) {
-    var closeButton = document.createElement('button');
-    closeButton.id = 'closeButton'; closeButton.textContent = 'Close';
-    closeButton.style.position = 'absolute'; closeButton.style.bottom = '10px';
-    closeButton.style.left = '50%'; closeButton.style.transform = 'translateX(-50%)';
-    closeButton.style.backgroundColor = '#fff'; closeButton.style.border = 'none';
-    closeButton.style.padding = '10px';
-    closeButton.style.cursor = 'pointer';
-    closeButton.style.borderRadius = '5px';
-    iframeContainer.appendChild(closeButton);
-    closeButton.addEventListener('click', function () { iframeContainer.style.display = 'none'; });
+document.getElementById('showFlipbookButton').addEventListener('click', function(event) {
+  event.preventDefault(); 
+
+  // Check screen width //
+  if (window.innerWidth <= 768) {
+      // Open in a new tab for smaller screens
+      window.open('C:/Users/Mike jordan/Downloads/Flipbook/index.html', '_blank');
+  } else {
+      // Show iframe for larger screens
+      var flipbookContainer = document.getElementById('flipbookContainer');
+      flipbookContainer.style.display = 'block';
+
+      if (!document.getElementById('closeButton')) {
+          var closeButton = document.createElement('button');
+          closeButton.id = 'closeButton';
+          closeButton.textContent = 'Close';
+          closeButton.style.position = 'absolute';
+          closeButton.style.bottom = '10px';
+          closeButton.style.left = '50%';
+          closeButton.style.transform = 'translateX(-50%)';
+          closeButton.style.backgroundColor = '#fff';
+          closeButton.style.border = 'none';
+          closeButton.style.padding = '10px';
+          closeButton.style.cursor = 'pointer';
+          closeButton.style.borderRadius = '5px';
+          flipbookContainer.appendChild(closeButton);
+          
+          closeButton.addEventListener('click', function() {
+              flipbookContainer.style.display = 'none';
+          });
+      }
   }
 });
+
