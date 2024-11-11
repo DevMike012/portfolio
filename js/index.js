@@ -209,7 +209,4 @@ document.getElementById('showIframeButton').addEventListener('click', function (
     closeButton.addEventListener('click', function () { iframeContainer.style.display = 'none'; });
   }
 });
-        }
-    }
-});
 
